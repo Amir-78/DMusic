@@ -28,6 +28,7 @@ function play(queue, guild, video) {
         try {
             if (sQueue.loop) {
                 sQueue.songs.push(sQueue.songs[0]);
+                sQueue.songs.shift();
             }
             if (sQueue.skip) {
                 sQueue.skip = false;
