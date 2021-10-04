@@ -37,7 +37,7 @@ npm install ffmpeg-static # ffmpeg windows
 - `YT_API_KEYS` : **Youtube API Keys** ( For better result, use more than one from different projects, [Click Here](https://developers.google.com/youtube/v3/getting-started))
 
 ## Commands:
-**`help`,`play`,`pause`,`resume`,`stop`,`replay`,`queue`,`loop`,`np`,`volume`,`move`,`remove`,`lyrics`,`skip`**
+**`help`,`play`,`pause`,`resume`,`stop`,`replay`,`queue`,`loop`,`np`,`volume`,`move`,`remove`,`lyrics`,`skip`,`clear`**
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
