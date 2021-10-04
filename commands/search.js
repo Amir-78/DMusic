@@ -64,7 +64,8 @@ module.exports = {
                     thumbnail: videoInfo.thumbnails.default.url,
                     duration_s: videoInfo.duration.seconds,
                     duration_m: videoInfo.duration.minutes,
-                    duration_h: videoInfo.duration.hours
+                    duration_h: videoInfo.duration.hours,
+                    add_by: message.member.user.tag     
                 };
                 if (!sQueue) {
                     const queueContruct = {
@@ -77,7 +78,8 @@ module.exports = {
                         player: null,
                         subscription: null,
                         loop: false,
-                        skip: false
+                        skip: false,
+                        replay: false
                     };
                     queue.set(interaction.guild.id, queueContruct);
                     queueContruct.songs.push(video);
