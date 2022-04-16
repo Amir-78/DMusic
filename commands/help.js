@@ -9,7 +9,7 @@ module.exports = {
             .setTitle("Bot Commands 🎶")
             .setColor("#00ff00")
             .setDescription(`**🎵 Music commands:**\n\n${commands.map(c => "`" + config.BOT_PREFIX + c + "`").join(" ")}`)
-            .setFooter(`Request by: ${message.member.user.tag} - Github: github.com/Amir-78`)
+            .setFooter({ text:`Request by: ${message.member.user.tag} - Github: github.com/Amir-78`, iconURL: message.member.displayAvatarURL({dynamic: true})})
         const row = new Discord.MessageActionRow()
             .addComponents(
                 new Discord.MessageButton()

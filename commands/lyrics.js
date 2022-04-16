@@ -16,7 +16,7 @@ module.exports = {
                 .setTitle(`${sQueue.songs[0].title} Lyrics`)
                 .setThumbnail(message.guild.iconURL())
                 .setDescription("```" + Lyrics[i] + "```")
-                .setFooter("Github: github.com/Amir-78")
+                .setFooter({ text:`Request by: ${message.member.user.tag} - Github: github.com/Amir-78`, iconURL: message.member.displayAvatarURL({dynamic: true})})
             message.reply({ embeds: [embed] })
         }
     },

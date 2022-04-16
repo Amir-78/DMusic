@@ -28,7 +28,7 @@ module.exports = {
             .setTitle("⏯️ - Playing now!")
             .setThumbnail(sQueue.songs[0].thumbnail)
             .setDescription(`**${sQueue.songs[0].title}** - ${time}`)
-            .setFooter(`Added By: ${sQueue.songs[0].add_by} - Github: github.com/Amir-78`)
+            .setFooter({ text:`Request by: ${message.member.user.tag} - Github: github.com/Amir-78`, iconURL: message.member.displayAvatarURL({dynamic: true})})
         message.reply({ embeds: [embed] })
     },
 };

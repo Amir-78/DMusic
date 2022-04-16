@@ -34,6 +34,7 @@ module.exports = {
         }
         let results = [];
         for (var i = 0; i < search_res.length; i++) {
+            if(search_res[i].title.length > 99)return;
             results.push({
                 label: search_res[i].title,
                 description: search_res[i].channel.title,

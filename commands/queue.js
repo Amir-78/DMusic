@@ -47,7 +47,7 @@ module.exports = {
                 }
 
             }
-            embed.setFooter(`${message.member.user.tag} - Page: ${pageNow + 1}/${result.length} - Github: github.com/Amir-78`)
+            embed.setFooter({text: `${message.member.user.tag} - Page: ${pageNow + 1}/${result.length} - Github: github.com/Amir-78`, iconURL: message.member.displayAvatarURL({dynamic: true})})
             message.reply({ embeds: [embed] }).then(async m => {
                 const filter = (reaction, user) => {
                     return (reaction.emoji.name === '⬇️' || reaction.emoji.name === '⬆️' || reaction.emoji.name === '⏹️') && user.id === message.author.id;
@@ -85,7 +85,7 @@ module.exports = {
                             }
                             nextEmbed.addField(`**#${sQueue.songs.indexOf(result[pageNow][i])} - ${result[pageNow][i].title}**- ${time}`, `\`Added by: ${result[pageNow][i].add_by}\``)
                         }
-                        nextEmbed.setFooter(`${message.member.user.tag} - Page: ${pageNow + 1}/${result.length}`)
+                        nextEmbed.setFooter({text: `${message.member.user.tag} - Page: ${pageNow + 1}/${result.length}`, iconURL: message.member.displayAvatarURL({dynamic: true})})
                         m.edit({ embeds: [nextEmbed] })
                         reaction.users.remove(message.member.user)
                     }
@@ -114,7 +114,7 @@ module.exports = {
                             }
                             nextEmbed.addField(`**#${sQueue.songs.indexOf(result[pageNow][i])} - ${result[pageNow][i].title}**- ${time}`, `\`Added by: ${result[pageNow][i].add_by}\``)
                         }
-                        nextEmbed.setFooter(`${message.member.user.tag} - Page: ${pageNow + 1}/${result.length}`)
+                        nextEmbed.setFooter({text: `${message.member.user.tag} - Page: ${pageNow + 1}/${result.length}`, iconURL: message.member.displayAvatarURL({dynamic: true})})
                         m.edit({ embeds: [nextEmbed] })
                         reaction.users.remove(message.member.user)
                     }

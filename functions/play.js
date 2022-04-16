@@ -19,7 +19,7 @@ function play(queue, guild, video) {
 
     const player = createAudioPlayer();
     player.on('error', error => {
-        console.error('Error:', error.message, 'with track', error.resource.metadata.title);
+        console.error('Error:', error.message, 'with track');
     });
 
     player.on('subscribe', l => {
