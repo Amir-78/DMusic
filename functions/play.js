@@ -64,7 +64,7 @@ function play(queue, guild, video) {
         play(queue, guild, sQueue.songs[0]);
     }).on("error", error => console.error(error));
     if (!sQueue.loop) {
-        sQueue.textChannel.send(`🎶 Playing **${video.title}**`);
+        sQueue.textChannel.send({content: `🎶 Playing **${video.title}**`});
     }
 }
 module.exports = { play }

@@ -12,18 +12,18 @@ module.exports = {
 
         const voiceChannel = message.member.voice.channel;
         if (!voiceChannel)
-            return message.reply("You need to be in a voice channel to play music!");
+            return message.reply({content: "You need to be in a voice channel to play music!"});
         const permissions = voiceChannel.permissionsFor(message.client.user);
-            if (!message.member.voice.channel) return message.reply(":x: | You have to be in a voice channel to stop the music!");
+            if (!message.member.voice.channel) return message.reply({content: ":x: | You have to be in a voice channel to stop the music!"});
         if (!permissions.has("CONNECT") || !permissions.has("SPEAK")) {
-            return message.reply("I need the permissions to join and speak in your voice channel!");
+            return message.reply({content: "I need the permissions to join and speak in your voice channel!"});
         }
 
-        if (message.guild.me.voice.channel && (message.member.voice.channelId != message.guild.me.voice.channelId)) return message.reply(`:x: - You must be listening in **${message.guild.me.voice.channel.name}** to use that!`);
-        if(message.member.voice.deaf || message.member.voice.selfDeaf)return message.reply(`**:x: - You cannot run this command while deafened!**`);
-        if(message.guild.me.voice.mute)return message.reply(`**:x: - Unmute me to use this command!**`);
+        if (message.guild.me.voice.channel && (message.member.voice.channelId != message.guild.me.voice.channelId)) return message.reply({content: `:x: - You must be listening in **${message.guild.me.voice.channel.name}** to use that!`});
+        if(message.member.voice.deaf || message.member.voice.selfDeaf)return message.reply({content: `**:x: - You cannot run this command while deafened!**`});
+        if(message.guild.me.voice.mute)return message.reply({content: `**:x: - Unmute me to use this command!**`});
         if(!args[1]){
-return message.reply("**:x: - Youtube URL / Keyword required!**")
+return message.reply({content: "**:x: - Youtube URL / Keyword required!**"})
         }
         let v_id = parseURL(args[1]).video
         if (!v_id) {
@@ -31,7 +31,7 @@ return message.reply("**:x: - Youtube URL / Keyword required!**")
             if (s_search[0]) {
                 v_id = s_search[0].id
             } else {
-                return message.reply('**:x: - No results found!**');
+                return message.reply({content: '**:x: - No results found!**'});
             }
         }
         const videoInfo = await video_info(v_id);
@@ -89,7 +89,7 @@ return message.reply("**:x: - Youtube URL / Keyword required!**")
             } catch (err) {
                 console.log(err);
                 queue.delete(message.guild.id);
-                return message.channel.send(err);
+                return message.channel.send({content: err.message});
             }
         } else {
             sQueue.songs.push(video);
@@ -109,7 +109,7 @@ return message.reply("**:x: - Youtube URL / Keyword required!**")
                     queueContruct.songs.push(vvideo);
                 }
             }
-            return message.channel.send(`⏯️ **${video.title}** has been added to the queue!`);
+            return message.channel.send({content: `⏯️ **${video.title}** has been added to the queue!`});
         }
     },
 };

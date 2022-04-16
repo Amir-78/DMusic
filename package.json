@@ -3,7 +3,7 @@
     "@discordjs/opus": "^0.5.3",
     "@discordjs/voice": "^0.6.0",
     "axios": "^0.22.0",
-    "discord.js": "^13.1.0",
+    "discord.js": "^13.6.0",
     "ffmpeg": "^0.0.4",
     "fs": "^0.0.1-security",
     "libsodium-wrappers": "^0.7.9",
